@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neighborhood Map</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type='text/javascript' src='bower_components/knockout/dist/knockout.js'></script>    
+</head>
+
+<body>
+    <input id="search-input" class="controls" type="text"
+        placeholder="Enter a Location">
+    <div id="map-canvas"></div>
+    <div id="list">
+        <h2>Visit Riverside!</h2>
+        <ul data-bind="foreach: allLocations">
+            <li data-bind="click: $parent.clickMarker"> 
+            <hr>               
+                <p class="name"><span data-bind="text: name"><span></p> 
+                <p class="address"><span data-bind="text: address"></span></p>                
+            </li>
+        </ul>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

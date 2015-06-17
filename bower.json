@@ -1,0 +1,30 @@
+{
+  "name": "map-project",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ballsrichter/map-project",
+  "authors": [
+    "Andrew Williams <andrewleighwilliams@gmail.com>"
+  ],
+  "description": "Interactive neighborhood map",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "dependencies": {
+    "knockout": "latest",
+    "jquery": "latest"
+  },
+  "keywords": [
+    "map",
+    "udacity",
+    "nanodegree"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

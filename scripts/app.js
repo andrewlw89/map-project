@@ -10,7 +10,7 @@ function mapViewModel() {
 /*###################################################################################################################################################*/
 
   // Load the map and add the event handlers needed. Calls clearPlaces on search then repopulates markerObjects.
-  function initialize() {
+  function init() {
     map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: jax,
     mapTypeId: google.maps.MapTypeId.HYBRID  
@@ -222,7 +222,7 @@ function mapViewModel() {
 
 /*###################################################################################################################################################*/
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', init);
 }
 
 ko.applyBindings(new mapViewModel());

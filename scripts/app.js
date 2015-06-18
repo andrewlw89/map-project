@@ -3,7 +3,7 @@ function mapViewModel() {
   var map, service, lat='', lng='', jax=new google.maps.LatLng(30.311657, -81.691094),infowindow,markerObjects=[];
 
   // ko observable array to hold all places
-  self.allLocations = ko.observableArray([]); // KO observable array to hold place data for different locations
+  self.allLocations = ko.observableArray(); // KO observable array to hold place data for different locations
 
   self.foursquareInfo = ''; // Holds fourSquareInfo as a string
 

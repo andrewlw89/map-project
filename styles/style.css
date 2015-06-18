@@ -3,7 +3,9 @@ html {
 }
 
 body { 
-	height: 100%; margin: 0; padding: 0 
+	height: 100%;
+    margin: 0;
+    padding: 0 
 }
 
 h2 {
@@ -28,7 +30,7 @@ li p {
     margin: 0;
 }
 
-p.name {
+li p.name {
     font-size: 14px;
     font-weight: bold;
 }
@@ -49,6 +51,7 @@ hr {
 #map-canvas { 
 	height: 100% 
 }
+
 .controls {
     margin-top: 16px;
     border: 1px solid transparent;

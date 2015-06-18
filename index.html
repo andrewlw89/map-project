@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neighborhood Map</title>
-    <link href="styles/styles.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type='text/javascript' src='bower_components/knockout/dist/knockout.js'></script>
+    <link href="styles/styles.min.css" rel="stylesheet">
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src='bower_components/knockout/dist/knockout.js'></script>
     <script src="//fast.eager.io/BdzqViC0Pw.js"></script>
 </head>
 
@@ -20,7 +20,7 @@
         <ul class="nav" data-bind="foreach: allLocations">
             <li data-bind="click: $parent.clickMarker"> 
             <hr>               
-                <p class="name"><span data-bind="text: name"><span></p> 
+                <p class="name"><span data-bind="text: name"></span></p> 
                 <p class="address"><span data-bind="text: address"></span></p>                
             </li>
         </ul>

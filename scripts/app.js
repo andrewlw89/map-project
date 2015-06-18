@@ -1,4 +1,7 @@
 function mapViewModel() {
+  
+  use strict;
+
   var self = this; 
   var map, service, lat='', lng='', jax=new google.maps.LatLng(30.311657, -81.691094),infowindow,markerObjects=[];
 
@@ -11,6 +14,7 @@ function mapViewModel() {
 
   // Load the map and add the event handlers needed. Calls clearPlaces on search then repopulates markerObjects.
   function init() {
+  	use strict;
     map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: jax,
     mapTypeId: google.maps.MapTypeId.HYBRID,
@@ -57,6 +61,7 @@ function mapViewModel() {
 
   // Uses the Google Places API to find local places within a radius of 800 meters of the maps center 
   function getPlaces() {
+  	use strict;
     var request = {
       location: jax,
       radius: 1200,
@@ -82,6 +87,7 @@ function mapViewModel() {
 
   // Pan to the clicked marker and open an infowindow
   self.clickMarker = function(place) {
+  	use strict;
     var marker;
 
     // This for loop compares the place_id of what was clicked vs that of the places in the markerObjects array. Once found, sets marker to that marker object and breaks the loop
@@ -106,6 +112,7 @@ function mapViewModel() {
 
   // Gets info from places that are searched and pushes to allLocations
   function getAllPlaces(place){
+  	use strict;
     var address;
     var currPlace = {};    
     currPlace.place_id = place.place_id;
@@ -126,6 +133,7 @@ function mapViewModel() {
 
   // This function pretty much does what it says it does. On page load or after a search, it creates the markers from the list of places.
   function generateMarker(place) {
+  	use strict;
     var marker = new google.maps.Marker({
       map: map,
       name: place.name.toLowerCase(), // Standardize the names to ensure no crazy cases such as 'cOoL guY'
@@ -162,6 +170,7 @@ function mapViewModel() {
   var clientSecret = 'GZO1LJTHX23YFLIMFGOLTX1M0GWM21FMH513U2U5N44KC1SZ';
 
   this.getFoursquareInfo = function(place) {
+  	use strict;
     // generate the foursquare URL that will be sent in our JSON request
     var foursquareURL = 'https://api.foursquare.com/v2/venues/search?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20150321' + '&ll=' +lat+ ',' +lng+ '&query=\'' + place.name + '\'&limit=1';
     
@@ -198,6 +207,7 @@ function mapViewModel() {
 
   // This function clears out the markers array so that it can be re-populated after a search
   function clearPlaces() {
+  	use strict;
     for (var i = 0; i < markerObjects.length; i++ ) {
       markerObjects[i].setMap(null);
     }
@@ -207,6 +217,7 @@ function mapViewModel() {
 /*###################################################################################################################################################*/
 
   function loadError() {
+  	use strict;
     $('#map-canvas').html("Whoops, there was an error and it looks like Google Maps didn't load!");
   } 
 
@@ -214,6 +225,7 @@ function mapViewModel() {
 
   // Used to determine the center of the map and assign that as lng and lat
   function computeCenter() {
+  	use strict;
     var latAndLng = map.getCenter();
       lat = latAndLng.lat();
       lng = latAndLng.lng(); 

@@ -13,17 +13,16 @@ function mapViewModel() {
   function init() {
     map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: jax,
-    mapTypeId: google.maps.MapTypeId.HYBRID  
+    mapTypeId: google.maps.MapTypeId.HYBRID,
     });
     getPlaces(); // Initiate getPlaces to populate 
     computeCenter();       
 
     var list = (document.getElementById('list'));
-    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(list);
+    map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(list);
     var searchInput = (document.getElementById('search-input'));
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(searchInput);
-    var searchBox = new google.maps.places.SearchBox(
-      (searchInput));
+    var searchBox = new google.maps.places.SearchBox(searchInput);
     google.maps.event.addListener(searchBox, 'places_changed', function() {
       var places = searchBox.getPlaces();
       clearPlaces();
@@ -60,7 +59,7 @@ function mapViewModel() {
   function getPlaces() {
     var request = {
       location: jax,
-      radius: 800,
+      radius: 1200,
       types: ['restaurant', 'bar', 'cafe', 'food']
     };
 
@@ -221,6 +220,8 @@ function mapViewModel() {
   }
 
 /*###################################################################################################################################################*/
+
+
 
   google.maps.event.addDomListener(window, 'load', init);
 }

@@ -37,6 +37,10 @@ li:hover {
     background-color: #008080;
 }
 
+.background_selected {
+    background-color: #008080;
+}
+
 hr {
     margin: 0;    
     padding: 0;

@@ -96,6 +96,8 @@ hr {
         position: absolute;
         left: 100px;
         top: 22px;
+        right: auto;
+        bottom: auto;
         z-index: 99;
     }
 }

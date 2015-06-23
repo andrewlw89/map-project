@@ -98,15 +98,22 @@ hr {
   transition: box-shadow 0.3s, border 0.3s;
 }
 
+@media screen and (max-height: 618px) {
+    #live-search {
+        position: absolute;
+        right: 10px;
+        bottom: 30px;
+        left: auto;
+        top: auto;
+        z-index: 99;
+    }
+}
+
 #live-search input[type="text"]:focus, #live-search input[type="text"].focus {
   border: solid 1px #707070;
   -webkit-box-shadow: 0 0 5px 1px #969696;
   -moz-box-shadow: 0 0 5px 1px #969696;
   box-shadow: 0 0 5px 1px #969696;
-}
-
-fieldset {
-
 }
 
 #type-selector {

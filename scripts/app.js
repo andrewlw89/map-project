@@ -34,16 +34,17 @@ function mapViewModel() {
   }
 
 /*###################################################################################################################################################*/
+
   // The following block of code is used to search the list of places and filter them using what is typed into the textbox.
   $("#filter").keyup(function(){
-  // Retrieve the input field text and reset the count to zero
-    var filter = $(this).val(), count = 0;
+  // Retrieve the input field text
+    var filter = $(this).val();
     // Loop through the comment list
     $(".nav li").each(function(){
       // If the list item does not contain the text phrase fade it out
       if ($(this).text().search(new RegExp(filter, "i")) < 0) {
         $(this).fadeOut();
-        // Show the list item if the phrase matches and increase the count by 1
+        // Show the list item if the phrase matches
       } else {
         $(this).show();
       }

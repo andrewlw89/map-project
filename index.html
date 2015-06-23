@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Neighborhood Map</title>
-    <link href="styles/styles.min.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
     <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src='bower_components/knockout/dist/knockout.js'></script>
-    <!--<script src="//fast.eager.io/BdzqViC0Pw.js"></script>-->
+    <script src="//fast.eager.io/BdzqViC0Pw.js"></script>
 </head>
 
 <body>
-    <form id="live-search" action="" class="styled" method="post">
-        <fieldset>
-            <input type="text" class="text-input" id="filter" value="" />
-            <span id="filter-count"></span>
-        </fieldset>
-    </form>
     <div id="map-canvas"></div>
+    <form id="live-search" action="" method="post">
+        <input type="text" class="text-input" id="filter" value="" placeholder="Filter the results here!" />
+    </form>
     <div id="list">
         <h2>Visit Jax!</h2>
         <ul class="nav" data-bind="foreach: allLocations">

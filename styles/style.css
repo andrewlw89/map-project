@@ -109,6 +109,17 @@ hr {
     }
 }
 
+@media screen and (max-height: 618px), screen and (min-width: 400px) {
+    #live-search {
+    position: absolute;
+    left: 100px;
+    top: 22px;
+    right: auto;
+    bottom: auto;
+    z-index: 99;
+    }
+}
+
 #live-search input[type="text"]:focus, #live-search input[type="text"].focus {
   border: solid 1px #707070;
   -webkit-box-shadow: 0 0 5px 1px #969696;

@@ -84,9 +84,20 @@ hr {
 
 #live-search {
     position: absolute;
-    left: 100px;
-    top: 22px;
+    right: 10px;
+    bottom: 30px;
+    left: auto;
+    top: auto;
     z-index: 99;
+}
+
+@media screen and (min-width: 420px) {
+    #live-search {
+        position: absolute;
+        left: 100px;
+        top: 22px;
+        z-index: 99;
+    }
 }
 
 #live-search input[type="text"] {
@@ -96,28 +107,6 @@ hr {
   -moz-transition: box-shadow 0.3s, border 0.3s;
   -o-transition: box-shadow 0.3s, border 0.3s;
   transition: box-shadow 0.3s, border 0.3s;
-}
-
-@media screen and (max-height: 618px) {
-    #live-search {
-        position: absolute;
-        right: 10px;
-        bottom: 30px;
-        left: auto;
-        top: auto;
-        z-index: 99;
-    }
-}
-
-@media screen and (min-width: 400px) {
-    #live-search {
-    position: absolute;
-    left: 100px;
-    top: 22px;
-    right: auto;
-    bottom: auto;
-    z-index: 99;
-    }
 }
 
 #live-search input[type="text"]:focus, #live-search input[type="text"].focus {

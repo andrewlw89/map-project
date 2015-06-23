@@ -23,31 +23,8 @@ function mapViewModel() {
 
     var list = (document.getElementById('list'));
     map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(list);
-    var searchInput = (document.getElementById('search-input'));
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(searchInput);
-    var searchBox = new google.maps.places.SearchBox(searchInput);
-    google.maps.event.addListener(searchBox, 'places_changed', function() {
-      var places = searchBox.getPlaces();
-      clearPlaces();
-      self.allLocations.removeAll();
-      var bounds = new google.maps.LatLngBounds();
-
-      //
-      for(var i=0, place; i<10; i++){
-        if (places[i] !== undefined){
-          place = places[i];
-
-          getAllPlaces(place);
-          generateMarker(place);
-          bounds.extend(place.geometry.location);
-        }
-      }
-      map.fitBounds(bounds); // Fit the map boundaries to the viewport
-      computeCenter();
-    });
     google.maps.event.addListener(map, 'bounds_changed', function(){
       var bounds = map.getBounds();
-      searchBox.setBounds(bounds);
     });
     // Borrowed this handler from a different project. This waits 5 seconds for the map to load. If it hasn't loaded by then, it displays an error.
     var timer = window.setTimeout(loadError, 5000);

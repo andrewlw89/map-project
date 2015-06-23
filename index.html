@@ -12,7 +12,12 @@
 </head>
 
 <body>
-    <input placeholder="Search…" type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+    <form id="live-search" action="" class="styled" method="post">
+        <fieldset>
+            <input type="text" class="text-input" id="filter" value="" />
+            <span id="filter-count"></span>
+        </fieldset>
+    </form>
     <div id="map-canvas"></div>
     <div id="list">
         <h2>Visit Jax!</h2>

@@ -4,7 +4,6 @@ function mapViewModel() {
 
   var self = this;
   var map, service, lat='', lng='', jax=new google.maps.LatLng(30.311657, -81.691094),infowindow,markerObjects=[];
-  self.query = ko.observable('');
   // ko observable array to hold all places
   self.allLocations = ko.observableArray(); // KO observable array to hold place data for different locations
 
@@ -56,6 +55,23 @@ function mapViewModel() {
       window.clearTimeout(timer);
     });
   }
+
+/*###################################################################################################################################################*/
+  // The following block of code is used to search the list of places and filter them using what is typed into the textbox.
+  $("#filter").keyup(function(){
+  // Retrieve the input field text and reset the count to zero
+    var filter = $(this).val(), count = 0;
+    // Loop through the comment list
+    $(".nav li").each(function(){
+      // If the list item does not contain the text phrase fade it out
+      if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+        $(this).fadeOut();
+        // Show the list item if the phrase matches and increase the count by 1
+      } else {
+        $(this).show();
+      }
+    });
+  });
 
 /*###################################################################################################################################################*/
 

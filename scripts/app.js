@@ -1,4 +1,4 @@
-function mapViewModel() {
+function MapViewModel() {
 
   "use strict";
 
@@ -53,7 +53,7 @@ function mapViewModel() {
 
 /*###################################################################################################################################################*/
 
-  // Uses the Google Places API to find local places within a radius of 800 meters of the maps center
+  // Uses the Google Places API to find local places within a radius of 1200 meters of the maps center
   function getPlaces() {
   	"use strict";
     var request = {
@@ -99,7 +99,7 @@ function mapViewModel() {
       var contentString = '<div style="font-weight: bold">' + place.name + '</div><div>' + place.address + '</div>' + self.foursquareInfo;
       infowindow.setContent(contentString);
       infowindow.open(map, marker);
-    }, 300);
+    }, 500);
   };
 
 /*###################################################################################################################################################*/
@@ -143,7 +143,8 @@ function mapViewModel() {
     } else if (place.formatted_address !== undefined) {
       address = place.formatted_address;
     }
-
+	/* Issue that needs fixing: foursquareInfo has not been set yet. Need to find a way to set the fourSquareInfo
+	before setting content string so that the info appears on marker click, not just listview click */
     var contentString = '<div style="font-weight: bold">' + place.name + '</div><div>' + address + '</div>' + self.foursquareInfo ;
 
     // Event listener for setting info window content on click
@@ -232,4 +233,4 @@ function mapViewModel() {
   google.maps.event.addDomListener(window, 'load', init);
 }
 
-ko.applyBindings(new mapViewModel());
+ko.applyBindings(new MapViewModel());
